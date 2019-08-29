@@ -1,0 +1,139 @@
+<div class="container m-3">
+  <br>
+  <h1 class="text-center">
+    Pipes
+  </h1>
+  <hr>
+  <table class="table table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>{{nombre}}</td>
+        <td>Upper Case</td>
+        <td>{{nombre | uppercase}}</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>{{nombre}}</td>
+        <td>Lower Case</td>
+        <td>{{nombre | lowercase}}</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>{{nombre}}</td>
+        <td>Slice</td>
+        <td>{{nombre | slice:0:4}}</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>{{arreglo}}</td>
+        <td>Slice Array</td>
+        <td>{{arreglo | slice:0:5}}</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>{{pi}}</td>
+        <td>Number Slice</td>
+        <td>{{pi | number:'3.5-5'}}</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>{{a}}</td>
+        <td>Percent</td>
+        <td>{{a | percent:'2.2-2'}}</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>{{salario}}</td>
+        <td>Percent</td>
+        <td>{{salario | currency}}</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>{{salario}}</td>
+        <td>Percent</td>
+        <td>{{salario | currency:'EUR'}}</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>{{salario}}</td>
+        <td>Percent</td>
+        <td>{{salario | currency:'EUR':false:'4.0-0'}}</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>{{valorDePromesa}}</td>
+        <td>Async</td>
+        <td>{{valorDePromesa | async}}</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>{{fecha}}</td>
+        <td>fecha - date</td>
+        <td>{{fecha | date}}</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>{{fecha}}</td>
+        <td>fecha - date:'medium'</td>
+        <td>{{fecha | date:'medium'}}</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>{{fecha}}</td>
+        <td>fecha - date:'MMM - dd'</td>
+        <td>{{fecha | date:'MMM - dd'}}</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>{{nombre2}}</td>
+        <td>Capitalizado</td>
+        <td>{{nombre2 | capitalizado}}</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>{{nombre2}}</td>
+        <td>Capitalizado</td>
+        <td>{{nombre2 | capitalizado:false}}</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>{{nombre2}}</td>
+        <td>Contraseña
+
+          <button class="btn btn-primary" (click)="changeContrasena()">
+            Cambiar
+          </button>
+
+        </td>
+        <td>{{nombre2 | contrasena:is_true}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <h4>Slice Lista Ordenada</h4>
+    <ul>
+      <li *ngFor="let item of arreglo | slice:5:20">
+        {{item}}
+      </li>
+    </ul>
+    <h4>
+      JSON
+    </h4>
+    <pre>{{heroe | json}}</pre>
+  </table>
+</div>
+<div class="container">
+  <h4>Youtube <small>Video</small></h4>
+  <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/' " frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
